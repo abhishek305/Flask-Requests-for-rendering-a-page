@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+
+   <title>Home page</title>
+    
+    
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href="{{url_for('static',filename='main.css')}}">
+   
+
+    
+</head>
+<body>
+
+    <h1>User Information</h1>
+   
+
+    {% for post in data%}
+    <div class="users">
+       <h3> Name :{{post.name}}</h3>
+        <h3> Email :{{post.email}}</h3>
+        <h3> Address :
+            {{post.address.street}}
+            {{post.address.suite}}
+            {{post.address.city}}
+            {{post.address.zipcode}}</h3>
+        <h3>Website :{{post.website}}</h3>
+    </div>    
+    {% endfor %}
+  
+
+
+</body>
+</html>
